@@ -1,0 +1,51 @@
+:root {
+    --main-color: #f1c40f;
+    --main-color-dark: #f39c12;
+    --main-color-light: #f9e79f;
+    --main-color-lighter: #fdebd0;
+    --main-color-lightest: #fef9e7;
+    --main-text-color: #2c3e50;
+    --main-bg-color: #ecf0f1;
+    --main-border-color: #bdc3c7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto', sans-serif;
+    user-select: none;
+}
+
+header {
+    background-color: var(--main-color-dark);
+    color: var(--main-text-color);
+    padding: 1em;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: 300;
+}
+
+
+
+
+#sideBar {
+    background-color: var(--main-color-light);
+    height: 90vh;
+}
+
+#bulkContainer {
+    background-color: var(--main-bg-color);
+    height: 90vh;
+}
