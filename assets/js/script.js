@@ -18,8 +18,8 @@ searchForm.addEventListener("submit", (event) => {
     city = city.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" "); // Format city name
     historyLink.innerHTML = `<h4 class="historyLink">${city}</h4>`; // Add city name to list item
     searchHistory.appendChild(historyLink); // Add list item to search history
-    const apiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`; // API URL for forecast
-    const apiUrlCurrent = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`; // API URL for current weather
+    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`; // API URL for forecast
+    const apiUrlCurrent = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`; // API URL for current weather
     searchForm.reset(); // Reset form
     fetch(apiUrlCurrent) // Fetch current weather data
         .then((response) => response.json())
@@ -34,7 +34,7 @@ searchForm.addEventListener("submit", (event) => {
             weatherInfoBox.classList.add("weatherInfoBox"); // Add class to weather info box
             weatherInfoBox.innerHTML = `
                 <h3>Current Weather</h3>
-                <img src="http://openweathermap.org/img/w/${image}.png" alt="Weather Icon">
+                <img src="https://openweathermap.org/img/w/${image}.png" alt="Weather Icon">
                 <p>Temperature: ${temperature}°F</p>
                 <p>Humidity: ${humidity}%</p>
                 <p>Wind Speed: ${windSpeed} MPH</p>
@@ -66,7 +66,7 @@ searchForm.addEventListener("submit", (event) => {
                     weatherInfoBox.classList.add("weatherInfoBox"); // Add class to weather info box
                     weatherInfoBox.innerHTML = `
                         <h3>Date: ${date.slice(6)}</h3>
-                        <img src="http://openweathermap.org/img/w/${image}.png" alt="Weather Icon">
+                        <img src="https://openweathermap.org/img/w/${image}.png" alt="Weather Icon">
                         <p>Temperature: ${temperature}°F</p>
                         <p>Humidity: ${humidity}%</p>
                         <p>Wind Speed: ${windSpeed} MPH</p>
@@ -83,8 +83,8 @@ searchForm.addEventListener("submit", (event) => {
 searchHistory.addEventListener("click", (event) => {
     event.preventDefault();
     if (event.target.classList.contains("historyLink")) {
-        const apiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${event.target.textContent}&appid=${apiKey}&units=imperial`;
-        const apiUrlCurrent = `http://api.openweathermap.org/data/2.5/weather?q=${event.target.textContent}&appid=${apiKey}&units=imperial`;
+        const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${event.target.textContent}&appid=${apiKey}&units=imperial`;
+        const apiUrlCurrent = `https://api.openweathermap.org/data/2.5/weather?q=${event.target.textContent}&appid=${apiKey}&units=imperial`;
         console.log(apiUrl);
         fetch(apiUrlCurrent)
             .then((response) => response.json())
@@ -99,7 +99,7 @@ searchHistory.addEventListener("click", (event) => {
                 weatherInfoBox.classList.add("weatherInfoBox");
                 weatherInfoBox.innerHTML = `
                     <h3>Current Weather</h3>
-                    <img src="http://openweathermap.org/img/w/${image}.png" alt="Weather Icon">
+                    <img src="https://openweathermap.org/img/w/${image}.png" alt="Weather Icon">
                     <p>Temperature: ${temperature}°F</p>
                     <p>Humidity: ${humidity}%</p>
                     <p>Wind Speed: ${windSpeed} MPH</p>
@@ -129,7 +129,7 @@ searchHistory.addEventListener("click", (event) => {
                         weatherInfoBox.classList.add("weatherInfoBox");
                         weatherInfoBox.innerHTML = `
                             <h3>Date: ${date.slice(6)}</h3>
-                            <img src="http://openweathermap.org/img/w/${image}.png" alt="Weather Icon">
+                            <img src="https://openweathermap.org/img/w/${image}.png" alt="Weather Icon">
                             <p>Temperature: ${temperature}°F</p>
                             <p>Humidity: ${humidity}%</p>
                             <p>Wind Speed: ${windSpeed} MPH</p>
