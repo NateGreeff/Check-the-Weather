@@ -25,11 +25,17 @@ h6 {
     user-select: none;
 }
 
+img {
+    user-select: none;
+}
+
 header {
     background-color: var(--main-color-dark);
     color: var(--main-text-color);
-    padding: 1em;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
 }
 
 header h1 {
@@ -37,15 +43,121 @@ header h1 {
     font-weight: 300;
 }
 
+.weatherInfoBox {
+    background-color: var(--main-color-lightest);
+    border-radius: 0.5em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 10vw;
+    height: 40vh;
+    box-shadow: var(--main-border-color) 0px 0px 10px;
+    transition: all 0.1s ease-in-out;
+}
 
+.weatherInfoBox:hover {
+    box-shadow: var(--main-border-color) 0px 0px 20px;
+    scale: 1.15;
+}
 
+.weatherInfoBox img {
+    width: 40%;
+    height: 30%;
+    padding: 5% 0;
+    border-bottom: var(--main-border-color) 1px solid;
+}
+
+.weatherInfoBox p {
+    font-size: 1.3vh;
+    padding: 1vh 0;
+    align-self: flex-start;
+}
 
 #sideBar {
     background-color: var(--main-color-light);
-    height: 90vh;
+    height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: var(--main-border-color) 1px solid;
 }
 
-#bulkContainer {
+#searchForm {
+    padding: 1em;
+}
+
+#searchForm input {
+    width: 100%;
+    margin: 0.5em 0;
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.5em;
+    font-size: 1.2em;
+    outline: none;
+}
+
+#searchForm input:hover {
+    background-color: var(--main-color-lightest);
+}
+
+#searchForm input:focus {
+    border: 2px solid var(--main-color-dark);
+    background-color: var(--main-color-lightest);
+}
+
+#searchForm button {
+    width: 100%;
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.5em;
+    font-size: 1.2em;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--main-color-dark);
+    color: var(--main-text-color);
+}
+
+#searchHistory h3 {
+    padding-bottom: 1em;
+    border-bottom: var(--main-border-color) 3px solid;
+}
+
+#searchHistory ul {
+    font-size: 1.2em;
+    list-style: none;
+    padding: 0;
+    height: 100%;
+    list-style: none;
+    overflow-y: none;
+}
+
+#searchHistory ul li {
+    padding: 0.5em 0;
+    border-bottom: var(--main-border-color) 1px solid;
+    cursor: pointer;
+    text-align: center;
+}
+
+#searchHistory ul li:hover {
+    background-color: var(--main-color-lighter);
+}
+
+#weatherInfo, #currentWeather {
     background-color: var(--main-bg-color);
-    height: 90vh;
+    height: 92vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#weatherInfo h2 {
+    font-size: 2em;
+    padding: 0.5em 0.5em 0.5em 0;
+    align-self: start;
+    margin-top: 0.5em;
+    border-bottom: var(--main-border-color) 1px solid;
+    border-left: var(--main-border-color) 1px solid;
+    border-right: var(--main-border-color) 1px solid;
 }
